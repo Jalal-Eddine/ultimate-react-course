@@ -142,3 +142,21 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+// Dustracturing
+const book = getBook(1);
+const { title, author, genres, publicationDate } = book;
+
+const [genres1, genres2, ...rest] = genres;
+
+console.log(genres1, genres2, rest);
+
+const updatedBook = {
+  ...book,
+  moviePublicationDate: "2019-12-19",
+  pages: "780",
+};
+console.log(updatedBook);
+const getYear = (year) => year.split("-")[0];
+console.log(getYear(publicationDate));
+console.log(false && "hello");
