@@ -144,6 +144,7 @@ function getBook(id) {
 }
 
 // Dustracturing
+const books = getBooks();
 const book = getBook(1);
 const { title, author, genres, publicationDate } = book;
 
@@ -160,3 +161,6 @@ console.log(updatedBook);
 const getYear = (year) => year.split("-")[0];
 console.log(getYear(publicationDate));
 console.log(false && "hello");
+// sorting arrays
+const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+sortedByPages;
